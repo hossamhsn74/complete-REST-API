@@ -42,8 +42,8 @@ urlpatterns = [
     path('products/', include('products.urls')),
 
     # all-auth urls
-    # path('rest-auth/', include('rest_auth.urls')),
-    # path('rest-auth/registration/', include('rest_auth.registration.urls')),
+    path('rest-auth/signup/', include('rest_auth.registration.urls')),
+    path('rest-auth/', include('rest_auth.urls')),
     # path('rest-auth/facebook/connect/', FacebookLogin.as_view(), name='fb_connect'),
     # path('rest-auth/github/connect/', GitHubLogin.as_view(), name='github_login'),
     # re_path(
@@ -58,7 +58,7 @@ urlpatterns = [
     # ),
 
     # yasg swagger urls
-    path('doc/', schema_view.with_ui('redoc',
+    path('docs/', schema_view.with_ui('redoc',
                                      cache_timeout=0), name='schema-redoc'),
     # re_path(r'api/(?P<version>[v1|v2]+)/',
     #         include('bookstore.urls')),

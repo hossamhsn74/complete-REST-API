@@ -45,6 +45,7 @@ class BookListView(generics.ListAPIView):
     queryset = Book.objects.all()
     serializer_class = serializers.BookSerializer
 
+    #will stop pagination which we set in settings.py
     # def get(self, request, format=None):
     #     """
     #     Return a list of all books.

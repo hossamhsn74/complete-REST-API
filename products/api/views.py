@@ -49,6 +49,7 @@ class ProductDetailView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (permissions.IsAuthenticated, permissions.IsAdminUser)
     queryset = Product.objects.all()
     serializer_class = serializers.ProductSerializer
+    # schema = ProductViewSchema
 
     def retrieve(self, request, *args, **kwargs):
         super(ProductDetailView, self).retrieve(request, args, kwargs)
