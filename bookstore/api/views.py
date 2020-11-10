@@ -55,6 +55,14 @@ class BookListView(generics.ListAPIView):
 
 
 class BookCreateView(generics.CreateAPIView):
+    """
+    View to add a new book.
+
+    * Requires token authentication.
+    * Only admin users are able to access this view.
+    """
+    # authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAdminUser, permissions.IsAuthenticated]
     queryset = Book.objects.all()
     serializer_class = serializers.BookSerializer
 
@@ -67,6 +75,8 @@ class BookCreateView(generics.CreateAPIView):
 
 
 class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
+    # authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAdminUser, permissions.IsAuthenticated]
     queryset = Book.objects.all()
     serializer_class = serializers.BookSerializer
 
