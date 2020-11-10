@@ -37,7 +37,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'rest_auth.registration',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'bookstore.apps.BookstoreConfig',
+    'products.apps.ProductsConfig',
+    'drf_yasg',
+
+
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,3 +150,13 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
 MEDIA_URL = '/media/'
+
+# 'rest_framework',
+# 'rest_framework.authtoken',
+# 'rest_auth',
+# 'django.contrib.sites',
+# 'allauth',
+# 'allauth.account',
+# 'rest_auth.registration',
+# 'rest_framework_swagger',
+# 'corsheaders',
